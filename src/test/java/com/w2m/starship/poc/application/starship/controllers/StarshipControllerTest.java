@@ -1,4 +1,4 @@
-package com.w2m.starship.poc;
+package com.w2m.starship.poc.application.starship.controllers;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
@@ -20,7 +20,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 @ExtendWith({RestDocumentationExtension.class, SpringExtension.class})
 @SpringBootTest
-class StarshipControllerIT {
+class StarshipControllerTest {
 
 	private MockMvc mockMvc;
 

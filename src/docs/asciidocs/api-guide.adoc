@@ -1,0 +1,202 @@
+= Starship API Guide
+
+This guide provides documentation for the Starship API endpoints.
+
+== Create Starship
+
+// POST /api/starships
+[source,curl]
+----
+include::{snippets}/crud-create-example/curl-request.adoc[]
+----
+
+[source,http]
+----
+include::{snippets}/crud-create-example/http-request.adoc[]
+----
+
+[source,http]
+----
+include::{snippets}/crud-create-example/http-response.adoc[]
+----
+
+[source,http]
+----
+include::{snippets}/crud-create-example/httpie-request.adoc[]
+----
+
+[source,json]
+----
+include::{snippets}/crud-create-example/request-body.adoc[]
+----
+
+[source,json]
+----
+include::{snippets}/crud-create-example/response-body.adoc[]
+----
+
+Additional Information:
+This endpoint creates a new starship with the specified details.
+
+== Get Starship
+
+// GET /api/starships/{starshipId}
+[source,curl]
+----
+include::{snippets}/crud-get-example/curl-request.adoc[]
+----
+
+[source,http]
+----
+include::{snippets}/crud-get-example/http-request.adoc[]
+----
+
+[source,http]
+----
+include::{snippets}/crud-get-example/http-response.adoc[]
+----
+
+[source,http]
+----
+include::{snippets}/crud-get-example/httpie-request.adoc[]
+----
+
+[source,json]
+----
+include::{snippets}/crud-get-example/response-body.adoc[]
+----
+
+Additional Information:
+This endpoint retrieves the details of the starship identified by the given ID (`{starshipId}`).
+If the starship exists, it responds with a JSON representation of the starship.
+If the starship with the specified ID does not exist, it returns a 404 Not Found response.
+
+== Get Starships by Name
+
+// GET /api/starships/search?name={name}
+[source,curl]
+----
+include::{snippets}/crud-get-matching-name-example/curl-request.adoc[]
+----
+
+[source,http]
+----
+include::{snippets}/crud-get-matching-name-example/http-request.adoc[]
+----
+
+[source,http]
+----
+include::{snippets}/crud-get-matching-name-example/http-response.adoc[]
+----
+
+[source,http]
+----
+include::{snippets}/crud-get-matching-name-example/httpie-request.adoc[]
+----
+
+[source,json]
+----
+include::{snippets}/crud-get-matching-name-example/response-body.adoc[]
+----
+
+Additional Information:
+This endpoint retrieves all starships whose names contain the specified string (`{name}`).
+It responds with a JSON array of matching starships.
+
+== Get All Starships (Paginated)
+
+// GET /api/starships?page={page}&size={size}
+[source,curl]
+----
+include::{snippets}/crud-get-paginated-example/curl-request.adoc[]
+----
+
+[source,http]
+----
+include::{snippets}/crud-get-paginated-example/http-request.adoc[]
+----
+
+[source,http]
+----
+include::{snippets}/crud-get-paginated-example/http-response.adoc[]
+----
+
+[source,http]
+----
+include::{snippets}/crud-get-paginated-example/httpie-request.adoc[]
+----
+
+[source,json]
+----
+include::{snippets}/crud-get-paginated-example/response-body.adoc[]
+----
+
+Additional Information:
+This endpoint retrieves a paginated list of starships.
+It accepts query parameters `page` and `size` to specify the page number and page size respectively.
+The response includes a JSON object with metadata and an array of starships.
+
+== Modify Starship
+
+// PUT /api/starships/{starshipId}
+[source,curl]
+----
+include::{snippets}/crud-modify-example/curl-request.adoc[]
+----
+
+[source,http]
+----
+include::{snippets}/crud-modify-example/http-request.adoc[]
+----
+
+[source,http]
+----
+include::{snippets}/crud-modify-example/http-response.adoc[]
+----
+
+[source,http]
+----
+include::{snippets}/crud-modify-example/httpie-request.adoc[]
+----
+
+[source,json]
+----
+include::{snippets}/crud-modify-example/request-body.adoc[]
+----
+
+[source,json]
+----
+include::{snippets}/crud-modify-example/response-body.adoc[]
+----
+
+Additional Information:
+This endpoint modifies the details of the starship identified by `{starshipId}` with the data provided in the request body.
+Upon successful modification, it responds with a JSON representation of the updated starship.
+
+== Delete Starship
+
+// DELETE /api/starships/{starshipId}
+[source,curl]
+----
+include::{snippets}/crud-delete-example/curl-request.adoc[]
+----
+
+[source,http]
+----
+include::{snippets}/crud-delete-example/http-request.adoc[]
+----
+
+[source,http]
+----
+include::{snippets}/crud-delete-example/http-response.adoc[]
+----
+
+[source,http]
+----
+include::{snippets}/crud-delete-example/httpie-request.adoc[]
+----
+
+Additional Information:
+This endpoint deletes the starship with the provided ID (`{starshipId}`).
+If the starship exists and is successfully deleted, it returns a 200 OK response.
+If the starship with the given ID does not exist, it returns a 404 Not Found response.

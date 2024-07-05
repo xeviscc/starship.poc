@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ErrorResponse {
-	private String error;
+public class StarshipRequest {
+	private String name;
+	private String description;
 }
